@@ -1,0 +1,27 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Build GTK Program",
+        "type": "shell",
+        "command": "gcc",
+        "args": [
+          "${shellCmd(pkg-config --cflags gtk+-3.0)}",
+          "-o", "myprogram", "myprogram.c",
+          "${shellCmd(pkg-config --libs gtk+-3.0)}"
+        ],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "problemMatcher": ["$gcc"],
+        "options": {
+          "shell": {
+            "executable": "bash.exe",
+            "args": ["-c"]
+          }
+        }
+      }
+    ]
+  }
+  
